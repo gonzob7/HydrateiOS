@@ -43,7 +43,7 @@ Hydrate is an iOS application designed to help you stay hydrated. According to a
 
 ## Wireframes
 
-**Insert wireframe pictures here**
+[Wireframes](https://www.notion.so/Wireframes-2bfb822775294531bd9b75330693ea3f)
 
 
 ## Evaluation
@@ -59,8 +59,8 @@ Hydrate is an iOS application designed to help you stay hydrated. According to a
 
 
 ## Approval Checklist
-- [ ] I have completed all the necessary parts of this proposal
-- [ ] I linked my proposal in the Spring Intensive Tracker
+- [x] I have completed all the necessary parts of this proposal
+- [x] I linked my proposal in the Spring Intensive Tracker
 
 ### Sign off
                
