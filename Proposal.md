@@ -59,13 +59,11 @@ Hydrate is an iOS application designed to help you stay hydrated. According to a
 
 
 ## Approval Checklist
-- [ ] If I have a team project, I wrote this proposal to represent my work and only my work
 - [ ] I have completed all the necessary parts of this proposal
 - [ ] I linked my proposal in the Spring Intensive Tracker
 
 ### Sign off
-
-**Student Name: **                
+               
 > Gonzo Birrueta / 03-13-20
 **Make School Advisor Name**
 > TBD
