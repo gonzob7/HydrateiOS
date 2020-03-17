@@ -14,6 +14,7 @@
 		E033456E241C749800629F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E033456C241C749800629F81 /* Main.storyboard */; };
 		E0334570241C749B00629F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E033456F241C749B00629F81 /* Assets.xcassets */; };
 		E0334573241C749B00629F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0334571241C749B00629F81 /* LaunchScreen.storyboard */; };
+		E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BD924205A090037A771 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E033456F241C749B00629F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0334572241C749B00629F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0334574241C749B00629F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E67BD924205A090037A771 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				2BB009497BE23DD743847B81 /* Pods-Hydrate.debug.xcconfig */,
 				687811AF1019C60C22BB7C97 /* Pods-Hydrate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +74,9 @@
 		E0334565241C749800629F81 /* Hydrate */ = {
 			isa = PBXGroup;
 			children = (
+				E0E67BD8242059DB0037A771 /* Models */,
+				E0E67BD7242059D60037A771 /* Views */,
+				E0E67BD6242059D00037A771 /* Controllers */,
 				E0334566241C749800629F81 /* AppDelegate.swift */,
 				E0334568241C749800629F81 /* SceneDelegate.swift */,
 				E033456A241C749800629F81 /* ViewController.swift */,
@@ -82,6 +86,28 @@
 				E0334574241C749B00629F81 /* Info.plist */,
 			);
 			path = Hydrate;
+			sourceTree = "<group>";
+		};
+		E0E67BD6242059D00037A771 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0E67BD924205A090037A771 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E0E67BD7242059D60037A771 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0E67BD8242059DB0037A771 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F757073CBB6E33AE94103FA5 /* Frameworks */ = {
@@ -189,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */,
 				E033456B241C749800629F81 /* ViewController.swift in Sources */,
 				E0334567241C749800629F81 /* AppDelegate.swift in Sources */,
 				E0334569241C749800629F81 /* SceneDelegate.swift in Sources */,
