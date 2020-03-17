@@ -14,6 +14,7 @@
 		E0334570241C749B00629F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E033456F241C749B00629F81 /* Assets.xcassets */; };
 		E0334573241C749B00629F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0334571241C749B00629F81 /* LaunchScreen.storyboard */; };
 		E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BD924205A090037A771 /* LoginViewController.swift */; };
+		E0E67BDC242135AC0037A771 /* CustomPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BDB242135AC0037A771 /* CustomPasswordField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E0334572241C749B00629F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0334574241C749B00629F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0E67BD924205A090037A771 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E0E67BDB242135AC0037A771 /* CustomPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		E0E67BD7242059D60037A771 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0E67BDB242135AC0037A771 /* CustomPasswordField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 				E033455F241C749800629F81 /* Sources */,
 				E0334560241C749800629F81 /* Frameworks */,
 				E0334561241C749800629F81 /* Resources */,
+				0F2E92923C514E877679F2B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +186,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F2E92923C514E877679F2B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hydrate/Pods-Hydrate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hydrate/Pods-Hydrate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hydrate/Pods-Hydrate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F644AF22C09EA7D160944736 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E67BDC242135AC0037A771 /* CustomPasswordField.swift in Sources */,
 				E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */,
 				E033456B241C749800629F81 /* ViewController.swift in Sources */,
 				E0334567241C749800629F81 /* AppDelegate.swift in Sources */,
