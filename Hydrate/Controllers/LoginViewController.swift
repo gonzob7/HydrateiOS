@@ -95,7 +95,7 @@ class LoginViewController: UIViewController{
                 // .expand: useful when the task has been compeletd successfully and you want to expand the button and transit to another view controller in the completion callback
                 // .shake: when you want to reflect to the user that the task did not complete successfly
                 // .normal
-                sender.stopAnimation(animationStyle: .normal, completion: {
+                sender.stopAnimation(animationStyle: .normal, revertAfterDelay: 0.10, completion: {
                     let homeVC = HomeViewController()
                     self.navigationController?.pushViewController(homeVC, animated: true)
 //                    self.present(homeVC, animated: true, completion: nil)
