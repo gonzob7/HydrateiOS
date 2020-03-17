@@ -13,9 +13,14 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
+        setupView()
     }
     
     func setupNav(){
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    func setupView(){
+        self.view.backgroundColor = .white
     }
 }
