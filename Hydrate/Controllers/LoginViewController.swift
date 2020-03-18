@@ -12,6 +12,7 @@ import TransitionButton
 
 class LoginViewController: UIViewController{
     
+    
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -19,6 +20,23 @@ class LoginViewController: UIViewController{
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         return stackView
+    }()
+    
+    let logo: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.image = UIImage(named: "hydrateLogo")
+        return image
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
+        button.titleLabel?.font = UIFont(name: "Helvetica-Light", size: 18)
+        button.setTitle("Don't have an account? Sign up now!", for: .normal)
+        return button
     }()
     
     
@@ -34,6 +52,7 @@ class LoginViewController: UIViewController{
     
     func setupView(){
         self.view.backgroundColor = .white
+        
         self.view.addSubview(stackView)
         
         stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.65).isActive = true
@@ -74,12 +93,20 @@ class LoginViewController: UIViewController{
         loginButton.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: 18)
         loginButton.semanticContentAttribute = .forceRightToLeft
         loginButton.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        
+        
+        self.view.addSubview(logo)
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        logo.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -100).isActive = true
+        logo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        logo.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        
+        self.view.addSubview(signUpButton)
+        signUpButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        signUpButton.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
-    
-    
-    
-    
-    
     
     
     @objc func loginTapped(_ sender: TransitionButton){
@@ -105,4 +132,3 @@ class LoginViewController: UIViewController{
     }
 
 }
-
