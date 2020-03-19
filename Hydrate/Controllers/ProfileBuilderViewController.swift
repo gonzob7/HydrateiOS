@@ -61,8 +61,9 @@ class ProfileBuilderViewController: UIViewController, UIScrollViewDelegate{
         let firstQuestion = GenderQuestion()
         let secondQuestion = WeightQuestion()
         let thirdQuestion = ActivityQuestion()
+        let fourthQuestion = HealthKitPermissionsView()
         
-        let questions = [firstQuestion, secondQuestion, thirdQuestion]
+        let questions = [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion]
         
         
         for question in questions{

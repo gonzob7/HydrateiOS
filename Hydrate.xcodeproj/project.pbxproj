@@ -21,6 +21,7 @@
 		E0E67BEA242307930037A771 /* WeightQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE9242307920037A771 /* WeightQuestion.swift */; };
 		E0E67BEC24230FBA0037A771 /* ActivityQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */; };
 		E0E67BEF24231E810037A771 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E67BEE24231E810037A771 /* HealthKit.framework */; };
+		E0E67BF124231F2A0037A771 /* HealthKitPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityQuestion.swift; sourceTree = "<group>"; };
 		E0E67BED24231E810037A771 /* Hydrate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hydrate.entitlements; sourceTree = "<group>"; };
 		E0E67BEE24231E810037A771 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				E0E67BE7242297830037A771 /* GenderQuestion.swift */,
 				E0E67BE9242307920037A771 /* WeightQuestion.swift */,
 				E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */,
+				E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				E0E67BE0242188080037A771 /* CustomAnimatedTextField.swift in Sources */,
 				E0334567241C749800629F81 /* AppDelegate.swift in Sources */,
 				E0E67BEC24230FBA0037A771 /* ActivityQuestion.swift in Sources */,
+				E0E67BF124231F2A0037A771 /* HealthKitPermissionsView.swift in Sources */,
 				E0334569241C749800629F81 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
