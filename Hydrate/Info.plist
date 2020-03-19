@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthShareUsageDescription</key>
-	<string>allow</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>allow</string>
+	<string>We will use this info for water logging</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We will use this data to calculate appropiate water consumption</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

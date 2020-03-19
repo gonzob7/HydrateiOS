@@ -40,9 +40,9 @@ class HealthKitPermissionsView: UIView{
         allowButton.addTarget(self, action: #selector(allowPressed), for: .touchUpInside)
     }
     
-    @objc func allowPressed(){
+    @objc func allowPressed(_ sender: UIButton){
         print("allow pressed")
-        
+        authorizeHealthKit()
         
     }
     
@@ -60,12 +60,16 @@ class HealthKitPermissionsView: UIView{
         
         let healthKitTypesToRead: Set<HKObjectType> = [
             
-            HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
-            HKObjectType.characteristicType(forIdentifier: .biologicalSex)!
+            HKObjectType.quantityType(forIdentifier: .dietaryWater)!
         
         ]
         
-        let healthKitTypesToWrite: Set<HKSampleType> = []
+        let healthKitTypesToWrite: Set<HKSampleType> = [
+            
+            HKObjectType.quantityType(forIdentifier: .dietaryWater)!,
+            HKObjectType.quantityType(forIdentifier: .bodyMass)!
+        
+        ]
         
         if !HKHealthStore.isHealthDataAvailable(){
             print("error")

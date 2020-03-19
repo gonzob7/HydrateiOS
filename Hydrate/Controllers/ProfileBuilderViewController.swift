@@ -61,15 +61,16 @@ class ProfileBuilderViewController: UIViewController, UIScrollViewDelegate{
         let firstQuestion = GenderQuestion()
         let secondQuestion = WeightQuestion()
         let thirdQuestion = ActivityQuestion()
-        let fourthQuestion = HealthKitPermissionsView()
+        let healthKitView = HealthKitPermissionsView()
         
-        let questions = [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion]
+        let questions = [healthKitView ,firstQuestion, secondQuestion, thirdQuestion]
         
         
         for question in questions{
             container.addArrangedSubview(question)
             question.heightAnchor.constraint(equalToConstant: view.frame.size.height).isActive = true
         }
+        
         
     }
     

@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import HealthKit
 
 class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
     
     var weight = (100...400).map { String($0) }
+    let healthKitStore:HKHealthStore = HKHealthStore()
 
+    
+    
     let weightPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +102,24 @@ class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-           let valueSelected = Int(weight[row])
+        let valueSelected = Double(weight[row])
+        let today = NSDate()
+        
+        
+        
+        if let type = HKSampleType.quantityType(forIdentifier: .bodyMass){
+            
+            let quantity = HKQuantity(unit: HKUnit.pound(), doubleValue: Double(valueSelected!))
+            
+            let sample = HKQuantitySample(type: type, quantity: quantity, start: today as Date, end: today as Date)
+            healthKitStore.save(sample) { (success, error) in
+                print("Saved \(success), error \(error)")
+            }
+            
+        }
+        
+        
+        
     }
     
 }
