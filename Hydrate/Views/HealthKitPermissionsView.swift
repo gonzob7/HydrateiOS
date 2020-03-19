@@ -28,6 +28,25 @@ class HealthKitPermissionsView: UIView{
         return button
     }()
     
+    
+    let continueButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 15)
+        button.backgroundColor = .clear
+//            button.setTitle("Allow Healthkit Permissions", for: .normal)
+        button.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
+        button.tintColor = .black
+        button.setTitleColor(.black, for: .normal)
+        
+        return button
+    }()
+    
+    
+    
+    
+    
+    
     func setup(){
     
         addSubview(allowButton)
@@ -38,6 +57,13 @@ class HealthKitPermissionsView: UIView{
 
         
         allowButton.addTarget(self, action: #selector(allowPressed), for: .touchUpInside)
+        
+        
+        addSubview(continueButton)
+        continueButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+        continueButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        continueButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     @objc func allowPressed(_ sender: UIButton){
@@ -82,5 +108,6 @@ class HealthKitPermissionsView: UIView{
         }
         
     }
+
     
 }

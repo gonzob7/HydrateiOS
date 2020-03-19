@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import TransitionButton
 
 class ActivityQuestion: UIView {
     
@@ -72,10 +73,27 @@ class ActivityQuestion: UIView {
     let continueButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: 20)
+        button.titleLabel?.font = UIFont(name: "", size: 20)
         button.backgroundColor = .clear
-        button.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
+        button.setTitle("Submit", for: .normal)
         button.tintColor = .black
+        
+        return button
+    }()
+    
+    
+    let submitButton: TransitionButton = {
+        let button = TransitionButton(frame: CGRect(x: 100, y: 100, width: 100, height: 40))
+        button.backgroundColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
+        button.setTitle("SUBMIT", for: .normal)
+        button.cornerRadius = 20
+        button.spinnerColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: 13)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        
         
         return button
     }()
@@ -105,12 +123,25 @@ class ActivityQuestion: UIView {
 //        femaleBtn.addTarget(self, action: #selector(femaleTapped), for: .touchDown)
         
         
-        addSubview(continueButton)
-        continueButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
-        continueButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
-        continueButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+//        addSubview(continueButton)
+//        continueButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+//        continueButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+//        continueButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+//        continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        
 
+        addSubview(submitButton)
+        
+//        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        submitButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30.0).isActive = true
+        submitButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 90.0).isActive = true
+        submitButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+
+        
+        
     }
     
     override init(frame: CGRect) {
@@ -121,6 +152,10 @@ class ActivityQuestion: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+
+
     
     
 }
