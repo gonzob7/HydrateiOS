@@ -106,6 +106,13 @@ class LoginViewController: UIViewController{
         signUpButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         signUpButton.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         signUpButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        signUpButton.addTarget(self, action: #selector(signUpSegue), for: .touchUpInside)
+    }
+    
+    @objc func signUpSegue(_ sender: UIButton){
+        let signUpVC = SignupViewController()
+        self.navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     

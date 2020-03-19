@@ -15,6 +15,10 @@
 		E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BD924205A090037A771 /* LoginViewController.swift */; };
 		E0E67BE0242188080037A771 /* CustomAnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BDF242188080037A771 /* CustomAnimatedTextField.swift */; };
 		E0E67BE224218A230037A771 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE124218A230037A771 /* HomeViewController.swift */; };
+		E0E67BE424219EEF0037A771 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE324219EEE0037A771 /* SignupViewController.swift */; };
+		E0E67BE624228B6B0037A771 /* ProfileBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE524228B6B0037A771 /* ProfileBuilderViewController.swift */; };
+		E0E67BE8242297830037A771 /* GenderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE7242297830037A771 /* GenderQuestion.swift */; };
+		E0E67BEA242307930037A771 /* WeightQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE9242307920037A771 /* WeightQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		E0E67BD924205A090037A771 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0E67BDF242188080037A771 /* CustomAnimatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimatedTextField.swift; sourceTree = "<group>"; };
 		E0E67BE124218A230037A771 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E0E67BE324219EEE0037A771 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E0E67BE524228B6B0037A771 /* ProfileBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilderViewController.swift; sourceTree = "<group>"; };
+		E0E67BE7242297830037A771 /* GenderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestion.swift; sourceTree = "<group>"; };
+		E0E67BE9242307920037A771 /* WeightQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 			children = (
 				E0E67BD924205A090037A771 /* LoginViewController.swift */,
 				E0E67BE124218A230037A771 /* HomeViewController.swift */,
+				E0E67BE324219EEE0037A771 /* SignupViewController.swift */,
+				E0E67BE524228B6B0037A771 /* ProfileBuilderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				E0E67BDF242188080037A771 /* CustomAnimatedTextField.swift */,
+				E0E67BE7242297830037A771 /* GenderQuestion.swift */,
+				E0E67BE9242307920037A771 /* WeightQuestion.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,8 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E67BE624228B6B0037A771 /* ProfileBuilderViewController.swift in Sources */,
+				E0E67BE424219EEF0037A771 /* SignupViewController.swift in Sources */,
 				E0E67BE224218A230037A771 /* HomeViewController.swift in Sources */,
 				E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */,
+				E0E67BEA242307930037A771 /* WeightQuestion.swift in Sources */,
+				E0E67BE8242297830037A771 /* GenderQuestion.swift in Sources */,
 				E0E67BE0242188080037A771 /* CustomAnimatedTextField.swift in Sources */,
 				E0334567241C749800629F81 /* AppDelegate.swift in Sources */,
 				E0334569241C749800629F81 /* SceneDelegate.swift in Sources */,
