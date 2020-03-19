@@ -64,6 +64,13 @@ class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
         headerLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
         
+        addSubview(continueButton)
+        continueButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+        continueButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
+        continueButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        
     }
     
     override init(frame: CGRect) {
@@ -87,6 +94,11 @@ class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
        let row = weight[row] + "lbs"
        return row
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+           let valueSelected = Int(weight[row])
     }
     
 }

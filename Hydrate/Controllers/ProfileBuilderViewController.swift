@@ -60,7 +60,7 @@ class ProfileBuilderViewController: UIViewController, UIScrollViewDelegate{
         
         let firstQuestion = GenderQuestion()
         let secondQuestion = WeightQuestion()
-        let thirdQuestion = GenderQuestion()
+        let thirdQuestion = ActivityQuestion()
         
         let questions = [firstQuestion, secondQuestion, thirdQuestion]
         

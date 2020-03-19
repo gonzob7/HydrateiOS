@@ -19,6 +19,7 @@
 		E0E67BE624228B6B0037A771 /* ProfileBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE524228B6B0037A771 /* ProfileBuilderViewController.swift */; };
 		E0E67BE8242297830037A771 /* GenderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE7242297830037A771 /* GenderQuestion.swift */; };
 		E0E67BEA242307930037A771 /* WeightQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BE9242307920037A771 /* WeightQuestion.swift */; };
+		E0E67BEC24230FBA0037A771 /* ActivityQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E0E67BE524228B6B0037A771 /* ProfileBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilderViewController.swift; sourceTree = "<group>"; };
 		E0E67BE7242297830037A771 /* GenderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestion.swift; sourceTree = "<group>"; };
 		E0E67BE9242307920037A771 /* WeightQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightQuestion.swift; sourceTree = "<group>"; };
+		E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				E0E67BDF242188080037A771 /* CustomAnimatedTextField.swift */,
 				E0E67BE7242297830037A771 /* GenderQuestion.swift */,
 				E0E67BE9242307920037A771 /* WeightQuestion.swift */,
+				E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				E0E67BE8242297830037A771 /* GenderQuestion.swift in Sources */,
 				E0E67BE0242188080037A771 /* CustomAnimatedTextField.swift in Sources */,
 				E0334567241C749800629F81 /* AppDelegate.swift in Sources */,
+				E0E67BEC24230FBA0037A771 /* ActivityQuestion.swift in Sources */,
 				E0334569241C749800629F81 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
