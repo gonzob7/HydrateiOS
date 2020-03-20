@@ -17,4 +17,14 @@ class UserHealthProfile {
 //  var bodyMassIndex: Double?
     
     
+    var waterIntakeRecommended: Double? {
+        guard let weight = weight
+        else {
+              return nil
+        }
+      
+        return (weight/2.0)
+    }
+    
+    
 }

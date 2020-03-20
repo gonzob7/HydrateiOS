@@ -38,7 +38,8 @@ class HomeViewController: CustomTransitionViewController{
     
     func updateLabels(){
         
-        print(userHealthProfile.weight)
+        print(userHealthProfile.weight!)
+        print(userHealthProfile.waterIntakeRecommended!)
         
     }
 
