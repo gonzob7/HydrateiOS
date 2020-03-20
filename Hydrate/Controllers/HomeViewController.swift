@@ -25,11 +25,34 @@ class HomeViewController: CustomTransitionViewController{
         return stackView
     }()
     
+    let logAmount: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont(name: "Helvetica-Bold", size: 30)
+        label.text = "0oz"
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+    
+    let goalLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont(name: "Helvetica-Bold", size: 15)
+        label.text = ""
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+    
     let logSlider: UISlider = {
         let slider = UISlider()
         slider.maximumValue = 10
         slider.minimumValue = 0
         slider.setValue(5, animated: false)
+        slider.translatesAutoresizingMaskIntoConstraints = false
         return slider
     }()
     
@@ -55,6 +78,7 @@ class HomeViewController: CustomTransitionViewController{
         self.view.backgroundColor = .white
         setupViews()
         loadAndDisplayWeight()
+
     }
     
     
@@ -69,10 +93,15 @@ class HomeViewController: CustomTransitionViewController{
         stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         stackView .centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         
+        stackView.addArrangedSubview(goalLabel)
+        
+        stackView.addArrangedSubview(logAmount)
+        
         stackView.addArrangedSubview(logSlider)
         
         stackView.addArrangedSubview(logButton)
         logButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
         
         logButton.addTarget(self, action: #selector(logButtonTapped), for: .touchUpInside)
         logSlider.addTarget(self, action: #selector(stepper), for: .valueChanged)
@@ -80,21 +109,20 @@ class HomeViewController: CustomTransitionViewController{
     
     
     func updateLabels(){
-        
-        print("\(userHealthProfile.waterIntakeRecommended!)oz recommended")
-        logWaterToHealthKit()
+        goalLabel.text = "\(userHealthProfile.waterIntakeRecommended!)oz recommended per day"
     }
     
     @objc func logButtonTapped(){
-        
-        updateLabels()
+        logWaterToHealthKit()
     }
     
     @objc func stepper(_ sender: UISlider){
         let step: Float = 1
         let currentValue = round((sender.value - sender.minimumValue) / step)
-        
+        let ozAmount = Int(currentValue)
         sender.value = currentValue
+        
+        logAmount.text = "Log \(ozAmount)oz"
 
     }
 
@@ -119,8 +147,9 @@ class HomeViewController: CustomTransitionViewController{
               
             let weightInPounds = sample.quantity.doubleValue(for: HKUnit.pound())
             self.userHealthProfile.weight = weightInPounds
-//            self.updateLabels()
+            self.updateLabels()
         }
+        
         
     }
     
