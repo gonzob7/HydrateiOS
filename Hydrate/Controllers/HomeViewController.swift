@@ -16,6 +16,40 @@ class HomeViewController: CustomTransitionViewController{
     
     private let userHealthProfile = UserHealthProfile()
 
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+    
+    let logSlider: UISlider = {
+        let slider = UISlider()
+        slider.maximumValue = 10
+        slider.minimumValue = 0
+        slider.setValue(5, animated: false)
+        return slider
+    }()
+    
+    let logButton: TransitionButton = {
+        let button = TransitionButton(frame: CGRect(x: 100, y: 100, width: 100, height: 40))
+        button.backgroundColor = .blue
+        button.setTitle("LOG", for: .normal)
+        button.cornerRadius = 20
+        button.spinnerColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: 13)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.setImage(UIImage(systemName: "square.and.arrow.down"), for: .normal)
+        
+
+        return button
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -24,8 +58,24 @@ class HomeViewController: CustomTransitionViewController{
     }
     
     
+    
     func setupViews(){
-//        print(weight)
+    
+        self.view.addSubview(stackView)
+        
+        stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.80).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+
+        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        stackView .centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        stackView.addArrangedSubview(logSlider)
+        
+        stackView.addArrangedSubview(logButton)
+        logButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
+        
+        logButton.addTarget(self, action: #selector(logButtonTapped), for: .touchUpInside)
+        logSlider.addTarget(self, action: #selector(stepper), for: .valueChanged)
     }
     
     
@@ -33,6 +83,19 @@ class HomeViewController: CustomTransitionViewController{
         
         print("\(userHealthProfile.waterIntakeRecommended!)oz recommended")
         logWaterToHealthKit()
+    }
+    
+    @objc func logButtonTapped(){
+        
+        updateLabels()
+    }
+    
+    @objc func stepper(_ sender: UISlider){
+        let step: Float = 1
+        let currentValue = round((sender.value - sender.minimumValue) / step)
+        
+        sender.value = currentValue
+
     }
 
     
@@ -56,14 +119,15 @@ class HomeViewController: CustomTransitionViewController{
               
             let weightInPounds = sample.quantity.doubleValue(for: HKUnit.pound())
             self.userHealthProfile.weight = weightInPounds
-            self.updateLabels()
+//            self.updateLabels()
         }
         
     }
     
     
     private func logWaterToHealthKit() {
-          UserDataStore.saveWaterSample(waterAmount: 10, date: Date())
+        UserDataStore.saveWaterSample(waterAmount: Double(self.logSlider.value), date: Date())
+        print("Logged \(Double(self.logSlider.value))oz of water! Check HK")
     }
     
     
@@ -79,30 +143,6 @@ class HomeViewController: CustomTransitionViewController{
       
       present(alert, animated: true, completion: nil)
     }
-    
-    
-    
-
-    
-    
-//    func readWeight(){
-//
-//        let weightType = HKSampleType.quantityType(forIdentifier: .bodyMass)!
-//
-//        let query = HKSampleQuery(sampleType: weightType, predicate: nil, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, results, error) in
-//            if let result = results?.last as? HKQuantitySample{
-//                print("Weight: \(result.quantity)")
-//                DispatchQueue.main.async(execute: { () -> Void in
-//                    self.weight = result.quantity.doubleValue(for: Double(HKUnit))
-//
-//                });
-//            }else{
-//                print("error")
-//
-//            }
-//        }
-//
-//    }
     
     
 }

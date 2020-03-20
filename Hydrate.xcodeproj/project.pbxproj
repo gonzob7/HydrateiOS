@@ -24,6 +24,8 @@
 		E0E67BF124231F2A0037A771 /* HealthKitPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */; };
 		E0E67BF4242479D70037A771 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF3242479D70037A771 /* UserDataStore.swift */; };
 		E0E67BF624248D6B0037A771 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF524248D6B0037A771 /* UserHealthProfile.swift */; };
+		E0E67BF82424A54A0037A771 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF72424A54A0037A771 /* PieChartViewController.swift */; };
+		E0E67BFA2424A7800037A771 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF92424A7800037A771 /* DemoBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionsView.swift; sourceTree = "<group>"; };
 		E0E67BF3242479D70037A771 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		E0E67BF524248D6B0037A771 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		E0E67BF72424A54A0037A771 /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		E0E67BF92424A7800037A771 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				E0E67BE124218A230037A771 /* HomeViewController.swift */,
 				E0E67BE324219EEE0037A771 /* SignupViewController.swift */,
 				E0E67BE524228B6B0037A771 /* ProfileBuilderViewController.swift */,
+				E0E67BF72424A54A0037A771 /* PieChartViewController.swift */,
+				E0E67BF92424A7800037A771 /* DemoBaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E67BFA2424A7800037A771 /* DemoBaseViewController.swift in Sources */,
 				E0E67BF4242479D70037A771 /* UserDataStore.swift in Sources */,
 				E0E67BE624228B6B0037A771 /* ProfileBuilderViewController.swift in Sources */,
 				E0E67BE424219EEF0037A771 /* SignupViewController.swift in Sources */,
@@ -281,6 +288,7 @@
 				E0E67BE0242188080037A771 /* CustomAnimatedTextField.swift in Sources */,
 				E0334567241C749800629F81 /* AppDelegate.swift in Sources */,
 				E0E67BEC24230FBA0037A771 /* ActivityQuestion.swift in Sources */,
+				E0E67BF82424A54A0037A771 /* PieChartViewController.swift in Sources */,
 				E0E67BF124231F2A0037A771 /* HealthKitPermissionsView.swift in Sources */,
 				E0334569241C749800629F81 /* SceneDelegate.swift in Sources */,
 			);
