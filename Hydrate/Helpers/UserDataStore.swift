@@ -31,6 +31,9 @@ class UserDataStore{
     }
     
     
+    
+    
+    
     class func getMostRecentSample(for sampleType: HKSampleType,
                                    completion: @escaping (HKQuantitySample?, Error?) -> Swift.Void) {
       
@@ -65,6 +68,35 @@ class UserDataStore{
      
     HKHealthStore().execute(sampleQuery)
     }
+    
+    
+    class func saveWaterSample(waterAmount: Double, date: Date) {
+      
+      //1.  Make sure the body mass type exists
+      guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
+        fatalError("Dietary Water Type is no longer available in HealthKit")
+      }
+        
+      //2.  Use the Count HKUnit to create a body mass quantity
+        let waterQuantity = HKQuantity(unit: HKUnit.ounce(),
+                                        doubleValue: waterAmount)
+        
+      let waterAmountSample = HKQuantitySample(type: waterType,
+                                                 quantity: waterQuantity,
+                                                 start: date,
+                                                 end: date)
+        
+      //3.  Save the same to HealthKit
+      HKHealthStore().save(waterAmountSample) { (success, error) in
+          
+        if let error = error {
+          print("Error Saving Water Sample: \(error.localizedDescription)")
+        } else {
+          print("Successfully saved Water Sample")
+        }
+      }
+    }
+
     
     
     
