@@ -61,10 +61,9 @@ class ProfileBuilderViewController: UIViewController, UIScrollViewDelegate{
         
         let firstQuestion = GenderQuestion()
         let secondQuestion = WeightQuestion()
-        let thirdQuestion = ActivityQuestion()
         let healthKitView = HealthKitPermissionsView()
         
-        let questions = [healthKitView ,firstQuestion, secondQuestion, thirdQuestion]
+        let questions = [healthKitView ,firstQuestion, secondQuestion]
         
         
         for question in questions{
@@ -72,7 +71,7 @@ class ProfileBuilderViewController: UIViewController, UIScrollViewDelegate{
             question.heightAnchor.constraint(equalToConstant: view.frame.size.height).isActive = true
         }
         
-        thirdQuestion.submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
+        secondQuestion.submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         
         
     }

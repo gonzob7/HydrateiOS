@@ -19,7 +19,6 @@ class HomeViewController: CustomTransitionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-//        readWeight()
         setupViews()
         loadAndDisplayWeight()
     }
@@ -30,16 +29,9 @@ class HomeViewController: CustomTransitionViewController{
     }
     
     
-    func calculateWaterConsumption(){
-        
-        
-        
-    }
-    
     func updateLabels(){
         
-        print(userHealthProfile.weight!)
-        print(userHealthProfile.waterIntakeRecommended!)
+        print("\(userHealthProfile.waterIntakeRecommended!)oz recommended")
         
     }
 
@@ -62,11 +54,9 @@ class HomeViewController: CustomTransitionViewController{
             return
           }
               
-          //2. Convert the height sample to meters, save to the profile model,
-          //   and update the user interface.
             let weightInPounds = sample.quantity.doubleValue(for: HKUnit.pound())
-          self.userHealthProfile.weight = weightInPounds
-          self.updateLabels()
+            self.userHealthProfile.weight = weightInPounds
+            self.updateLabels()
         }
         
     }

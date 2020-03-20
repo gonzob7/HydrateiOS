@@ -8,6 +8,7 @@
 
 import UIKit
 import HealthKit
+import TransitionButton
 
 class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
     
@@ -34,13 +35,20 @@ class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
         return headerLabel
     }()
     
-    let continueButton: UIButton = {
-        let button = UIButton()
+    
+    let submitButton: TransitionButton = {
+        let button = TransitionButton(frame: CGRect(x: 100, y: 100, width: 100, height: 40))
+        button.backgroundColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
+        button.setTitle("SUBMIT", for: .normal)
+        button.cornerRadius = 20
+        button.spinnerColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: 20)
-        button.backgroundColor = .clear
-        button.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
+        button.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: 13)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        
+        
         return button
     }()
 
@@ -67,12 +75,13 @@ class WeightQuestion: UIView, UIPickerViewDelegate, UIPickerViewDataSource{
         headerLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.80).isActive = true
         headerLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
+
+        addSubview(submitButton)
         
-        addSubview(continueButton)
-        continueButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
-        continueButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
-        continueButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        submitButton.topAnchor.constraint(equalTo: weightPicker.bottomAnchor, constant: 30.0).isActive = true
+        submitButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 90.0).isActive = true
+        submitButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         
     }
