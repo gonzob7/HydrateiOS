@@ -22,6 +22,8 @@
 		E0E67BEC24230FBA0037A771 /* ActivityQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BEB24230FBA0037A771 /* ActivityQuestion.swift */; };
 		E0E67BEF24231E810037A771 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E67BEE24231E810037A771 /* HealthKit.framework */; };
 		E0E67BF124231F2A0037A771 /* HealthKitPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */; };
+		E0E67BF4242479D70037A771 /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF3242479D70037A771 /* UserDataStore.swift */; };
+		E0E67BF624248D6B0037A771 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67BF524248D6B0037A771 /* UserHealthProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		E0E67BED24231E810037A771 /* Hydrate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hydrate.entitlements; sourceTree = "<group>"; };
 		E0E67BEE24231E810037A771 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E0E67BF024231F2A0037A771 /* HealthKitPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionsView.swift; sourceTree = "<group>"; };
+		E0E67BF3242479D70037A771 /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
+		E0E67BF524248D6B0037A771 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E67BED24231E810037A771 /* Hydrate.entitlements */,
+				E0E67BF22424799F0037A771 /* Helpers */,
 				E0E67BD8242059DB0037A771 /* Models */,
 				E0E67BD7242059D60037A771 /* Views */,
 				E0E67BD6242059D00037A771 /* Controllers */,
@@ -129,8 +134,17 @@
 		E0E67BD8242059DB0037A771 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E0E67BF524248D6B0037A771 /* UserHealthProfile.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E0E67BF22424799F0037A771 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E0E67BF3242479D70037A771 /* UserDataStore.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F757073CBB6E33AE94103FA5 /* Frameworks */ = {
@@ -256,10 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E67BF4242479D70037A771 /* UserDataStore.swift in Sources */,
 				E0E67BE624228B6B0037A771 /* ProfileBuilderViewController.swift in Sources */,
 				E0E67BE424219EEF0037A771 /* SignupViewController.swift in Sources */,
 				E0E67BE224218A230037A771 /* HomeViewController.swift in Sources */,
 				E0E67BDA24205A090037A771 /* LoginViewController.swift in Sources */,
+				E0E67BF624248D6B0037A771 /* UserHealthProfile.swift in Sources */,
 				E0E67BEA242307930037A771 /* WeightQuestion.swift in Sources */,
 				E0E67BE8242297830037A771 /* GenderQuestion.swift in Sources */,
 				E0E67BE0242188080037A771 /* CustomAnimatedTextField.swift in Sources */,

@@ -12,8 +12,7 @@ import HealthKit
 
 class HealthKitPermissionsView: UIView{
     
-    let healthKitStore:HKHealthStore = HKHealthStore()
-    
+    let healthKitStore:HKHealthStore = HKHealthStore()    
     
     let allowButton: UIButton = {
         let button = UIButton()
@@ -86,7 +85,9 @@ class HealthKitPermissionsView: UIView{
         
         let healthKitTypesToRead: Set<HKObjectType> = [
             
-            HKObjectType.quantityType(forIdentifier: .dietaryWater)!
+            HKObjectType.quantityType(forIdentifier: .dietaryWater)!,
+            HKObjectType.quantityType(forIdentifier: .bodyMass)!
+            
         
         ]
         

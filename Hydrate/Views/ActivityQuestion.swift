@@ -123,17 +123,10 @@ class ActivityQuestion: UIView {
 //        femaleBtn.addTarget(self, action: #selector(femaleTapped), for: .touchDown)
         
         
-//        addSubview(continueButton)
-//        continueButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
-//        continueButton.widthAnchor.constraint(equalToConstant: 50.0).isActive = true
-//        continueButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-//        continueButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
         
 
         addSubview(submitButton)
         
-//        submitButton.translatesAutoresizingMaskIntoConstraints = false
         submitButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30.0).isActive = true
         submitButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         submitButton.widthAnchor.constraint(equalToConstant: 90.0).isActive = true
@@ -152,9 +145,6 @@ class ActivityQuestion: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-
 
     
     

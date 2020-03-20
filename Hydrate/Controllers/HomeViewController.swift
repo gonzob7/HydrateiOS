@@ -9,13 +9,104 @@
 import Foundation
 import UIKit
 import TransitionButton
+import HealthKit
 
 class HomeViewController: CustomTransitionViewController{
     
+    
+    private let userHealthProfile = UserHealthProfile()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+//        readWeight()
+        setupViews()
+        loadAndDisplayWeight()
     }
+    
+    
+    func setupViews(){
+//        print(weight)
+    }
+    
+    
+    func calculateWaterConsumption(){
+        
+        
+        
+    }
+    
+    func updateLabels(){
+        
+        print(userHealthProfile.weight)
+        
+    }
+
+    
+    private func loadAndDisplayWeight() {
+        
+        guard let weightSampleType = HKSampleType.quantityType(forIdentifier: .bodyMass) else {
+          print("Body Mass Sample Type is no longer available in HealthKit")
+          return
+        }
+        
+        UserDataStore.getMostRecentSample(for: weightSampleType) { (sample, error) in
+              
+          guard let sample = sample else {
+              
+            if let error = error {
+              self.displayAlert(for: error)
+            }
+                
+            return
+          }
+              
+          //2. Convert the height sample to meters, save to the profile model,
+          //   and update the user interface.
+            let weightInPounds = sample.quantity.doubleValue(for: HKUnit.pound())
+          self.userHealthProfile.weight = weightInPounds
+          self.updateLabels()
+        }
+        
+    }
+    
+    
+    private func displayAlert(for error: Error) {
+      
+      let alert = UIAlertController(title: nil,
+                                    message: error.localizedDescription,
+                                    preferredStyle: .alert)
+      
+      alert.addAction(UIAlertAction(title: "O.K.",
+                                    style: .default,
+                                    handler: nil))
+      
+      present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+
+    
+    
+//    func readWeight(){
+//
+//        let weightType = HKSampleType.quantityType(forIdentifier: .bodyMass)!
+//
+//        let query = HKSampleQuery(sampleType: weightType, predicate: nil, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, results, error) in
+//            if let result = results?.last as? HKQuantitySample{
+//                print("Weight: \(result.quantity)")
+//                DispatchQueue.main.async(execute: { () -> Void in
+//                    self.weight = result.quantity.doubleValue(for: Double(HKUnit))
+//
+//                });
+//            }else{
+//                print("error")
+//
+//            }
+//        }
+//
+//    }
     
     
 }
