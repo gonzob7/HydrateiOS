@@ -32,7 +32,7 @@ class HomeViewController: CustomTransitionViewController{
     func updateLabels(){
         
         print("\(userHealthProfile.waterIntakeRecommended!)oz recommended")
-        
+        logWaterToHealthKit()
     }
 
     
@@ -59,6 +59,11 @@ class HomeViewController: CustomTransitionViewController{
             self.updateLabels()
         }
         
+    }
+    
+    
+    private func logWaterToHealthKit() {
+          UserDataStore.saveWaterSample(waterAmount: 10, date: Date())
     }
     
     

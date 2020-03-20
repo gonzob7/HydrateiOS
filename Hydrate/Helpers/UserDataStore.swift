@@ -36,66 +36,68 @@ class UserDataStore{
     
     class func getMostRecentSample(for sampleType: HKSampleType,
                                    completion: @escaping (HKQuantitySample?, Error?) -> Swift.Void) {
+        
       
-    //1. Use HKQuery to load the most recent samples.
-    let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast,
-                                                          end: Date(),
-                                                          options: .strictEndDate)
-        
-    let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate,
-                                          ascending: false)
-        
-    let limit = 1
-        
-    let sampleQuery = HKSampleQuery(sampleType: sampleType,
-                                    predicate: mostRecentPredicate,
-                                    limit: limit,
-                                    sortDescriptors: [sortDescriptor]) { (query, samples, error) in
-        
-        //2. Always dispatch to the main thread when complete.
-        DispatchQueue.main.async {
+        //1. Use HKQuery to load the most recent samples.
+        let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast,
+                                                              end: Date(),
+                                                              options: .strictEndDate)
             
-          guard let samples = samples,
-                let mostRecentSample = samples.first as? HKQuantitySample else {
-                    
-                completion(nil, error)
-                return
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate,
+                                              ascending: false)
+            
+        let limit = 1
+            
+        let sampleQuery = HKSampleQuery(sampleType: sampleType,
+                                        predicate: mostRecentPredicate,
+                                        limit: limit,
+                                        sortDescriptors: [sortDescriptor]) { (query, samples, error) in
+            
+            //2. Always dispatch to the main thread when complete.
+            DispatchQueue.main.async {
+                
+              guard let samples = samples,
+                    let mostRecentSample = samples.first as? HKQuantitySample else {
+                        
+                    completion(nil, error)
+                    return
+              }
+                
+              completion(mostRecentSample, nil)
+            }
           }
-            
-          completion(mostRecentSample, nil)
+         
+        HKHealthStore().execute(sampleQuery)
         }
-      }
-     
-    HKHealthStore().execute(sampleQuery)
-    }
     
     
     class func saveWaterSample(waterAmount: Double, date: Date) {
+        
       
-      //1.  Make sure the body mass type exists
-      guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
-        fatalError("Dietary Water Type is no longer available in HealthKit")
-      }
-        
-      //2.  Use the Count HKUnit to create a body mass quantity
-        let waterQuantity = HKQuantity(unit: HKUnit.ounce(),
-                                        doubleValue: waterAmount)
-        
-      let waterAmountSample = HKQuantitySample(type: waterType,
-                                                 quantity: waterQuantity,
-                                                 start: date,
-                                                 end: date)
-        
-      //3.  Save the same to HealthKit
-      HKHealthStore().save(waterAmountSample) { (success, error) in
-          
-        if let error = error {
-          print("Error Saving Water Sample: \(error.localizedDescription)")
-        } else {
-          print("Successfully saved Water Sample")
+          //1.  Make sure the water type exists
+          guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
+            fatalError("Dietary Water Type is no longer available in HealthKit")
+          }
+            
+          //2.  Use the Count HKUnit to create a body mass quantity
+        let waterQuantity = HKQuantity(unit: HKUnit.fluidOunceUS(),
+                                            doubleValue: waterAmount)
+            
+          let waterAmountSample = HKQuantitySample(type: waterType,
+                                                     quantity: waterQuantity,
+                                                     start: date,
+                                                     end: date)
+            
+          //3.  Save the same to HealthKit
+          HKHealthStore().save(waterAmountSample) { (success, error) in
+              
+            if let error = error {
+              print("Error Saving Water Sample: \(error.localizedDescription)")
+            } else {
+              print("Successfully saved Water Sample")
+            }
+          }
         }
-      }
-    }
 
     
     
