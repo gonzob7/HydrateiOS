@@ -132,9 +132,6 @@ class ActivityQuestion: UIView {
         submitButton.widthAnchor.constraint(equalToConstant: 90.0).isActive = true
         submitButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-
-        
-        
     }
     
     override init(frame: CGRect) {

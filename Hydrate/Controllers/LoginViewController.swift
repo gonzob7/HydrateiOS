@@ -39,7 +39,6 @@ class LoginViewController: UIViewController{
         return button
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
