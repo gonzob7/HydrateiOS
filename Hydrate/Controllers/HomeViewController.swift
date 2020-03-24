@@ -32,7 +32,6 @@ class HomeViewController: CustomTransitionViewController{
         label.text = "0oz"
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
     
@@ -72,13 +71,24 @@ class HomeViewController: CustomTransitionViewController{
         return button
     }()
     
+    let circleProgress: CAShapeLayer = {
+        let circleLayer = CAShapeLayer()
+        
+        return circleLayer
+    }()
+    
+    let circleView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupViews()
         loadAndDisplayWeight()
-
     }
     
     
@@ -88,12 +98,18 @@ class HomeViewController: CustomTransitionViewController{
         self.view.addSubview(stackView)
         
         stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.80).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 300).isActive = true
 
         stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         stackView .centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         
         stackView.addArrangedSubview(goalLabel)
+        
+        stackView.addArrangedSubview(circleView)
+        
+//        circleView.layer.addSublayer(circleProgress)
+        circleProgress.path = UIBezierPath(arcCenter: view.center, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true).cgPath
+        
         
         stackView.addArrangedSubview(logAmount)
         
