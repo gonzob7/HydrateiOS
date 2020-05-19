@@ -74,12 +74,10 @@ class UserDataStore{
     class func saveWaterSample(waterAmount: Double, date: Date) {
         
       
-          //1.  Make sure the water type exists
           guard let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) else {
             fatalError("Dietary Water Type is no longer available in HealthKit")
           }
             
-          //2.  Use the Count HKUnit to create a body mass quantity
         let waterQuantity = HKQuantity(unit: HKUnit.fluidOunceUS(),
                                             doubleValue: waterAmount)
             
@@ -88,7 +86,6 @@ class UserDataStore{
                                                      start: date,
                                                      end: date)
             
-          //3.  Save the same to HealthKit
           HKHealthStore().save(waterAmountSample) { (success, error) in
               
             if let error = error {

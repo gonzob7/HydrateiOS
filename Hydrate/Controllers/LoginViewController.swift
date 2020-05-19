@@ -33,7 +33,7 @@ class LoginViewController: UIViewController{
     let signUpButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
+        button.backgroundColor = UIColor.systemTeal
         button.titleLabel?.font = UIFont(name: "Helvetica-Light", size: 18)
         button.setTitle("Don't have an account? Sign up now!", for: .normal)
         return button
@@ -74,7 +74,7 @@ class LoginViewController: UIViewController{
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         
         let loginButton = TransitionButton(frame: CGRect(x: 100, y: 100, width: 100, height: 40))
-        loginButton.backgroundColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
+        loginButton.backgroundColor = UIColor.systemTeal
         loginButton.setTitle("SIGN IN", for: .normal)
         loginButton.cornerRadius = 20
         loginButton.spinnerColor = .white
@@ -107,6 +107,11 @@ class LoginViewController: UIViewController{
         signUpButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         signUpButton.addTarget(self, action: #selector(signUpSegue), for: .touchUpInside)
+    }
+    
+    //dismiss keyboard on tapped outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @objc func signUpSegue(_ sender: UIButton){

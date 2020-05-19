@@ -48,10 +48,11 @@ class HomeViewController: CustomTransitionViewController{
     
     let logSlider: UISlider = {
         let slider = UISlider()
-        slider.maximumValue = 10
+        slider.maximumValue = 32
         slider.minimumValue = 0
         slider.setValue(5, animated: false)
         slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.tintColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
         return slider
     }()
     
@@ -62,6 +63,7 @@ class HomeViewController: CustomTransitionViewController{
         button.cornerRadius = 20
         button.spinnerColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(red:0.00, green:0.46, blue:0.60, alpha:1.0)
         button.tintColor = .white
         button.titleLabel!.font = UIFont(name: "Helvetica-Bold", size: 13)
         button.semanticContentAttribute = .forceRightToLeft
@@ -94,6 +96,9 @@ class HomeViewController: CustomTransitionViewController{
     
     
     func setupViews(){
+        
+        
+
     
         self.view.addSubview(stackView)
         
@@ -129,6 +134,12 @@ class HomeViewController: CustomTransitionViewController{
     }
     
     @objc func logButtonTapped(){
+        let alert = UIAlertController(title: "Success", message: "You have successfully logged your water intake, this data will be available via your Health app", preferredStyle: .alert)
+
+
+        alert.addAction(UIAlertAction(title: "Thanks!", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
         logWaterToHealthKit()
     }
     
@@ -136,6 +147,7 @@ class HomeViewController: CustomTransitionViewController{
         let step: Float = 1
         let currentValue = round((sender.value - sender.minimumValue) / step)
         let ozAmount = Int(currentValue)
+        
         sender.value = currentValue
         
         logAmount.text = "Log \(ozAmount)oz"

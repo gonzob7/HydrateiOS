@@ -118,6 +118,11 @@ class SignupViewController: UIViewController{
         self.navigationController?.pushViewController(logInVC, animated: true)
     }
     
+    //dismiss keyboard on tapped outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     
         
         

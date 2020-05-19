@@ -50,7 +50,7 @@ class HealthKitPermissionsView: UIView{
     
         addSubview(allowButton)
         allowButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        allowButton.widthAnchor.constraint(equalToConstant: 200.0).isActive = true
+        allowButton.widthAnchor.constraint(equalToConstant: 300.0).isActive = true
         allowButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         allowButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
 
